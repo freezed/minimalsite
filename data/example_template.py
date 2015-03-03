@@ -59,7 +59,7 @@ menu_code = ''
 def get_page_contents(node):
     """Return page title and description from the global variable pages if a
     match with current node page.src_pathname is found.
-    """ 
+    """
 
     try:
         return (SITE_NAME + ' | ' + PAGES[node.page.src_pathname][0], \
@@ -176,7 +176,7 @@ def header(node):
     <body>
         <div id="container">
             <header>
-                <h1><a href="''' + '../' * node.page.level + '''index.''' + DST_EXT + '''">''' + SITE_NAME + '''</a></h1>
+                <h1><a href="''' + '../' * (node.page.level-1) + '''index.''' + DST_EXT + '''">''' + SITE_NAME + '''</a></h1>
             </header>
             <div id="path">
                 You are here: %%%PATH%%%
@@ -199,7 +199,7 @@ def footer(node):
                 </div>
             </div>
             <footer>
-                &copy; ''' + str(current_time.year) + ' ' + AUTHOR + ''' | Generated with <a href="http://www.minimalblue.com/software/minimalsite.html">minimalsite</a> 
+                &copy; ''' + str(current_time.year) + ' ' + AUTHOR + ''' | Generated with <a href="http://www.minimalblue.com/software/minimalsite.html">minimalsite</a>
             </footer>
         </div>
     </body>
